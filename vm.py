@@ -12,5 +12,16 @@ class VendingMachine:
             coin = params[0]
             self._change += int(coin)
             return coin + "원을 넣었습니다"
+        elif cmd == "음료":
+            known_beverage = "커피"
+            price = 150
+
+            beverage = params[0]
+            if beverage != known_beverage:
+                return "알 수 없는 음료입니다"
+            if self._change < price:
+                return "잔액이 부족합니다"
+            self._change = self._change - price
+            return beverage + "가 나왔습니다"
         else:
             return "알 수 없는 명령입니다"
