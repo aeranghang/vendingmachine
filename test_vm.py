@@ -34,6 +34,6 @@ def test_동전이_부족한_상황에서_음료_뽑기():
     assert "잔액이 부족합니다" == m.run("음료 커피")
     assert "잔액은 100원입니다" == m.run("잔액")
 
-def test_unknown_command():
+def test_알_수_없는_명령():
     m = VendingMachine()
     assert "알 수 없는 명령입니다" == m.run("웅앵")
